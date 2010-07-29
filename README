@@ -1,6 +1,9 @@
-Design to integrate :
+DICOM Design to integrate in ITKv4:
 
 - echoscu
-- storescu + storescp
 - findscu
-- movescu
+- storescu + storescp
+- movescu : do we really need move ?
+
+TODO:
+  Come up with a good mechanism to generate filenames (reuse : itkImageSeriesWriter ?)
