@@ -38,6 +38,7 @@ public:
   /** Run-time type information (and related methods). */
   itkTypeMacro(DICOMBase, Superclass);
 
+  /* Implementation detail: User power-two enums to allow combining them */
   typedef enum {
     ImplicitVRLittleEndian = 1, // Implicit VR Little Endian: Default Transfer Syntax for DICOM
     ExplicitVRLittleEndian = 2, // Explicit VR Little Endian
