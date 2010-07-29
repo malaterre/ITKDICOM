@@ -17,7 +17,7 @@
 #ifndef __itkDICOMEchoSCU_h
 #define __itkDICOMEchoSCU_h
 
-#include "itkDICOMBase.h"
+#include "itkDICOMSCU.h"
 
 #include <string>
 
@@ -27,7 +27,7 @@ namespace itk
 /** \class DICOMEchoSCU
  * \brief
  */
-class ITK_EXPORT DICOMEchoSCU : public DICOMBase
+class ITK_EXPORT DICOMEchoSCU : public DICOMSCU
 {
 public:
   /** Standard class typedefs. */
@@ -37,6 +37,20 @@ public:
 
   /** Run-time type information (and related methods). */
   itkTypeMacro(DICOMEchoSCU, Superclass);
+
+  /** association negotiation debugging: */
+
+  /** propose n transfer syntaxes */
+  itkSetMacro(ProposeTransferSyntax, unsigned int);
+  itkGetMacro(ProposeTransferSyntax, unsigned int);
+
+  /** propose n presentation contexts */
+  itkSetMacro(ProposePresentationContexts, unsigned int);
+  itkGetMacro(ProposePresentationContexts, unsigned int);
+
+private:
+  unsigned int m_ProposeTransferSyntax;
+  unsigned int m_ProposePresentationContexts;
 
 private:
   DICOMEchoSCU(const Self&);      //purposely not implemented

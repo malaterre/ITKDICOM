@@ -14,7 +14,7 @@
      PURPOSE.  See the above copyright notices for more information.
 
 =========================================================================*/
-#include "itkDICOMStoreSCU.h"
+#include "itkDICOMStoreSCP.h"
 
 namespace itk
 {

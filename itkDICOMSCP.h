@@ -14,54 +14,35 @@
      PURPOSE.  See the above copyright notices for more information.
 
 =========================================================================*/
-#ifndef __itkDICOMStoreSCU_h
-#define __itkDICOMStoreSCU_h
+#ifndef __itkDICOMSCP_h
+#define __itkDICOMSCP_h
 
-#include "itkDICOMSCU.h"
+#include "itkDICOMBase.h"
 
 #include <string>
 
 namespace itk
 {
 
-/** \class DICOMStoreSCU
- * \brief
+/** \class DICOMBase
+ * \brief Abstract superclass defines image DICOM interface.
  */
-class ITK_EXPORT DICOMStoreSCU : public DICOMSCU
+class ITK_EXPORT DICOMSCP : public DICOMBase
 {
 public:
   /** Standard class typedefs. */
-  typedef DICOMStoreSCU       Self;
-  typedef DICOMBase          Superclass;
+  typedef DICOMBase        Self;
+  typedef LightProcessObject Superclass;
   typedef SmartPointer<Self> Pointer;
 
   /** Run-time type information (and related methods). */
-  itkTypeMacro(DICOMStoreSCU, Superclass);
-
-  /** input files */
-  typedef std::vector< std::string >           FileNamesContainer;
-  void SetFileNames (const FileNamesContainer &name);
-  const FileNamesContainer  & GetFileNames() const;
-
-  /** user identity negotiation: */
-  /** authenticate using user name */
-  itkSetStringMacro(UserName);
-  itkGetStringMacro(UserName);
-
-  /** authenticate using password */
-  itkSetStringMacro(Password);
-  itkGetStringMacro(Password);
+  itkTypeMacro(DICOMBase, Superclass);
 
 private:
-  FileNamesContainer m_FileNames;
-  std::string m_UserName;
-  std::string m_Password;
-
-private:
-  DICOMStoreSCU(const Self&);      //purposely not implemented
+  DICOMSCP(const Self&);      //purposely not implemented
   void operator=(const Self&); //purposely not implemented
 };
 
 } // end namespace itk
 
-#endif // __itkDICOMStoreSCU_h
+#endif // __itkDICOMBase_h

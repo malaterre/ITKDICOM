@@ -14,9 +14,19 @@
      PURPOSE.  See the above copyright notices for more information.
 
 =========================================================================*/
-#include "itkDICOMEchoSCU.h"
+#include "itkDICOMStoreSCU.h"
 
 namespace itk
 {
+
+const DICOMStoreSCU::FileNamesContainer & DICOMStoreSCU::GetFileNames() const
+{
+  return m_FileNames;
+}
+
+void DICOMStoreSCU::SetFileNames (const FileNamesContainer &names)
+{
+  m_FileNames = names;
+}
 
 } // end namespace itk

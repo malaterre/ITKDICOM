@@ -63,15 +63,6 @@ public:
   itkSetStringMacro(CalledAETitle);
   itkGetStringMacro(CalledAETitle);
 
-  /** proposed transmission transfer syntaxes: */
-  typedef enum {
-    ImplicitVRLittleEndian = 1,
-    ExplicitVRLittleEndian = 2,
-    ExplicitVRBigEndian    = 4,
-  } TransmissionTransferSyntaxType;
-  itkSetEnumMacro(TransmissionTransferSyntax, TransmissionTransferSyntaxType);
-  itkGetEnumMacro(TransmissionTransferSyntax, TransmissionTransferSyntaxType);
-
   /** other network options: */
 
   /// timeout for connection requests.
@@ -87,17 +78,13 @@ public:
   itkSetMacro(DIMSETimeout, unsigned int);
   itkGetMacro(DIMSETimeout, unsigned int);
 
-  /// set max receive pdu to n bytes 
+  /// set max receive pdu to n bytes
   itkSetMacro(MaxPDU, unsigned int);
   itkGetMacro(MaxPDU, unsigned int);
 
   /// repeat n times
   itkSetMacro(NumberOfRepeat, unsigned int);
   itkGetMacro(NumberOfRepeat, unsigned int);
-
-  /// cancel after n responses
-  itkSetMacro(CancelAfterNResponses, unsigned int);
-  itkGetMacro(CancelAfterNResponses, unsigned int);
 
 private:
   // FIXME: an abstract class should not have data member:
@@ -106,13 +93,11 @@ private:
   QueryInformationModelType m_QueryInformationModel;
   std::string m_AETitle;
   std::string m_CalledAETitle;
-  TransmissionTransferSyntaxType m_TransmissionTransferSyntax;
   unsigned int m_Timeout;
   unsigned int m_ACSETimeout;
   unsigned int m_DIMSETimeout;
   unsigned int m_MaxPDU;
   unsigned int m_NumberOfRepeat;
-  unsigned int m_CancelAfterNResponses;
 
 private:
   DICOMBase(const Self&);      //purposely not implemented

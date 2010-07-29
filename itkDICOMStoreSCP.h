@@ -17,7 +17,7 @@
 #ifndef __itkDICOMStoreSCP_h
 #define __itkDICOMStoreSCP_h
 
-#include "itkDICOMBase.h"
+#include "itkDICOMSCP.h"
 
 #include <string>
 
@@ -27,7 +27,7 @@ namespace itk
 /** \class DICOMStoreSCP
  * \brief
  */
-class ITK_EXPORT DICOMStoreSCP : public DICOMBase
+class ITK_EXPORT DICOMStoreSCP : public DICOMSCP
 {
 public:
   /** Standard class typedefs. */

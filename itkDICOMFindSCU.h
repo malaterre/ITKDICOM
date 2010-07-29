@@ -17,7 +17,7 @@
 #ifndef __itkDICOMFindSCU_h
 #define __itkDICOMFindSCU_h
 
-#include "itkDICOMBase.h"
+#include "itkDICOMSCU.h"
 
 #include <string>
 
@@ -27,7 +27,7 @@ namespace itk
 /** \class DICOMFindSCU
  * \brief
  */
-class ITK_EXPORT DICOMFindSCU : public DICOMBase
+class ITK_EXPORT DICOMFindSCU : public DICOMSCU
 {
 public:
   /** Standard class typedefs. */
@@ -37,6 +37,13 @@ public:
 
   /** Run-time type information (and related methods). */
   itkTypeMacro(DICOMFindSCU, Superclass);
+
+  /** cancel after n responses */
+  itkSetMacro(CancelAfterNResponses, unsigned int);
+  itkGetMacro(CancelAfterNResponses, unsigned int);
+
+private:
+  unsigned int m_CancelAfterNResponses;
 
 private:
   DICOMFindSCU(const Self&);      //purposely not implemented

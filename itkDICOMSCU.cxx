@@ -14,37 +14,9 @@
      PURPOSE.  See the above copyright notices for more information.
 
 =========================================================================*/
-#ifndef __itkDICOMMoveSCU_h
-#define __itkDICOMMoveSCU_h
-
-#include "itkDICOMSCU.h"
-
-#include <string>
+#include "itkDICOMBase.h"
 
 namespace itk
 {
 
-/** \class DICOMMoveSCU
- * \brief
- *
- * Do we need move ?
- */
-class ITK_EXPORT DICOMMoveSCU : public DICOMSCU
-{
-public:
-  /** Standard class typedefs. */
-  typedef DICOMMoveSCU       Self;
-  typedef DICOMBase          Superclass;
-  typedef SmartPointer<Self> Pointer;
-
-  /** Run-time type information (and related methods). */
-  itkTypeMacro(DICOMMoveSCU, Superclass);
-
-private:
-  DICOMMoveSCU(const Self&);      //purposely not implemented
-  void operator=(const Self&); //purposely not implemented
-};
-
 } // end namespace itk
-
-#endif // __itkDICOMMoveSCU_h
