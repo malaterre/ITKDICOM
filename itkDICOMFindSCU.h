@@ -14,8 +14,8 @@
      PURPOSE.  See the above copyright notices for more information.
 
 =========================================================================*/
-#ifndef __itkDICOMEchoSCU_h
-#define __itkDICOMEchoSCU_h
+#ifndef __itkDICOMFindSCU_h
+#define __itkDICOMFindSCU_h
 
 #include "itkDICOMBase.h"
 
@@ -24,25 +24,25 @@
 namespace itk
 {
 
-/** \class DICOMEchoSCU
+/** \class DICOMFindSCU
  * \brief
  */
-class ITK_EXPORT DICOMEchoSCU : public DICOMBase
+class ITK_EXPORT DICOMFindSCU : public DICOMBase
 {
 public:
   /** Standard class typedefs. */
-  typedef DICOMEchoSCU       Self;
+  typedef DICOMFindSCU       Self;
   typedef DICOMBase          Superclass;
   typedef SmartPointer<Self> Pointer;
 
   /** Run-time type information (and related methods). */
-  itkTypeMacro(DICOMEchoSCU, Superclass);
+  itkTypeMacro(DICOMFindSCU, Superclass);
 
 private:
-  DICOMEchoSCU(const Self&);      //purposely not implemented
+  DICOMFindSCU(const Self&);      //purposely not implemented
   void operator=(const Self&); //purposely not implemented
 };
 
 } // end namespace itk
 
-#endif // __itkDICOMEchoSCU_h
+#endif // __itkDICOMFindSCU_h

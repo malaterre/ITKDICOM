@@ -8,6 +8,11 @@ include(${ITK_USE_FILE})
 
 set(ITKDICOM_SRCS
   itkDICOMBase.cxx
+  itkDICOMEchoSCU.cxx
+  itkDICOMFindSCU.cxx
+  itkDICOMMoveSCU.cxx
+  itkDICOMStoreSCP.cxx
+  itkDICOMStoreSCU.cxx
   )
 
 add_library(ITKDICOM
