@@ -38,6 +38,13 @@ public:
   /** Run-time type information (and related methods). */
   itkTypeMacro(DICOMBase, Superclass);
 
+  /** preferred transmission transfer syntaxes: */
+  itkSetEnumMacro(PreferredTransmissionTransferSyntax, TransmissionTransferSyntaxType);
+  itkGetEnumMacro(PreferredTransmissionTransferSyntax, TransmissionTransferSyntaxType);
+
+private:
+  TransmissionTransferSyntaxType m_PreferredTransmissionTransferSyntax;
+
 private:
   DICOMSCP(const Self&);      //purposely not implemented
   void operator=(const Self&); //purposely not implemented
