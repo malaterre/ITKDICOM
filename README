@@ -3,7 +3,7 @@ DICOM Design to integrate in ITKv4:
 - echoscu
 - findscu
 - storescu + storescp
-- movescu : do we really need move ?
+- movescu (C-GET is not always provided by PACS system)
 
 TODO:
   Come up with a good mechanism to generate filenames (reuse : itkImageSeriesWriter ?)
