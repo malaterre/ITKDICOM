@@ -18,6 +18,7 @@
 #define __itkDICOMMoveSCU_h
 
 #include "itkDICOMSCU.h"
+#include "itkDICOMSCP.h"
 
 #include <string>
 
@@ -26,10 +27,10 @@ namespace itk
 
 /** \class DICOMMoveSCU
  * \brief
- *
- * Do we need move ?
+ * - SCU  for  the  Query/Retrieve Service Class 
+ * - SCP for the Storage Service Class
  */
-class ITK_EXPORT DICOMMoveSCU : public DICOMSCU
+class ITK_EXPORT DICOMMoveSCU : public DICOMSCU, public DICOMSCP
 {
 public:
   /** Standard class typedefs. */
