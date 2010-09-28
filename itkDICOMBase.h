@@ -27,7 +27,7 @@ namespace itk
 /** \class DICOMBase
  * \brief Abstract superclass defines image DICOM interface.
  */
-class ITK_EXPORT DICOMBase : public LightProcessObject
+class ITK_EXPORT DICOMBase : virtual public Object
 {
 public:
   /** Standard class typedefs. */
@@ -66,12 +66,6 @@ public:
   itkSetMacro(PortNumber, unsigned int);
   itkGetMacro(PortNumber, unsigned int);
 
-  /* network options: **/
-  /** query information model: */
-  typedef  enum { Worklist, Patient, Study, PSOnly}  QueryInformationModelType;
-  itkSetEnumMacro(QueryInformationModel, QueryInformationModelType);
-  itkGetEnumMacro(QueryInformationModel, QueryInformationModelType);
-
   /** application entity titles: */
   /** set calling AE title */
   itkSetStringMacro(AETitle);
@@ -100,22 +94,16 @@ public:
   itkSetMacro(MaxPDU, unsigned int);
   itkGetMacro(MaxPDU, unsigned int);
 
-  /// repeat n times
-  itkSetMacro(NumberOfRepeat, unsigned int);
-  itkGetMacro(NumberOfRepeat, unsigned int);
-
 private:
   // FIXME: an abstract class should not have data member:
   std::string m_PeerHostname;
   unsigned int m_PortNumber;
-  QueryInformationModelType m_QueryInformationModel;
   std::string m_AETitle;
   std::string m_CalledAETitle;
   unsigned int m_Timeout;
   unsigned int m_ACSETimeout;
   unsigned int m_DIMSETimeout;
   unsigned int m_MaxPDU;
-  unsigned int m_NumberOfRepeat;
 
 private:
   DICOMBase(const Self&);      //purposely not implemented

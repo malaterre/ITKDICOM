@@ -27,7 +27,7 @@ namespace itk
 
 /** \class DICOMMoveSCU
  * \brief
- * - SCU  for  the  Query/Retrieve Service Class 
+ * - SCU  for  the  Query/Retrieve Service Class
  * - SCP for the Storage Service Class
  */
 class ITK_EXPORT DICOMMoveSCU : public DICOMSCU, public DICOMSCP
@@ -40,6 +40,15 @@ public:
 
   /** Run-time type information (and related methods). */
   itkTypeMacro(DICOMMoveSCU, Superclass);
+
+  /* network options: **/
+  /** query information model: */
+  typedef  enum { Worklist, Patient, Study, PSOnly}  QueryInformationModelType;
+  itkSetEnumMacro(QueryInformationModel, QueryInformationModelType);
+  itkGetEnumMacro(QueryInformationModel, QueryInformationModelType);
+
+private:
+  QueryInformationModelType m_QueryInformationModel;
 
 private:
   DICOMMoveSCU(const Self&);      //purposely not implemented
