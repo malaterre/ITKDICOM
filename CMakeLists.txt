@@ -13,6 +13,8 @@ set(ITKDICOM_SRCS
   itkDICOMMoveSCU.cxx
   itkDICOMStoreSCP.cxx
   itkDICOMStoreSCU.cxx
+  itkDICOMDataSet.cxx
+  itkGDCMDataSet.cxx
   )
 
 add_library(ITKDICOM
